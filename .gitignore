@@ -18,6 +18,9 @@ python_packages/
 *.xlsx
 *.docx
 
+# ignore tempory files
+*.tmp
+
 # ignore pictures
 *.png
 *.jpg
