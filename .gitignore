@@ -15,6 +15,8 @@ python_packages/
 *.osm
 *.npy
 *.zip
+*.xlsx
+*.docx
 
 # ignore pictures
 *.png
@@ -25,12 +27,11 @@ python_packages/
 
 # C extensions
 *.so
+*.m
 
-# ignore result data right now
+# ignore visualization tools
 Model_options/
 Latex_files/
-ExiD/
-IntD/
 simulations_1.py
 simulations_2.py
 simulations_3.py
@@ -45,12 +46,19 @@ analyse_data.py
 analyse_data_2.py
 analyse_data_3.py
 Load_results.py
-CoR_processing_raw.py
 
+# Ignore old commotions model files
+sc_scenario.py
+sc_scenario_helper.py
+
+# Ignor not used data set right now
+InD - Intersections/
+ExiD/
+IntD/
+CoR_processing_raw.py
 
 # Jupyter Notebook
 .ipynb_checkpoints
-
 
 # pyenv
 .python-version
