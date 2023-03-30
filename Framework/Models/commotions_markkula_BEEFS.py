@@ -75,4 +75,4 @@ class commotions_markkula_BEEFS(model_template, commotions_template):
     
     
     def get_name(self):
-        return 'commotions_expanded_inter_FS_BO_EI'
+        return 'commotions_inter_FS_BO_EI'

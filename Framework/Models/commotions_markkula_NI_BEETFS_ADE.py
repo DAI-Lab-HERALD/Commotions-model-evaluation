@@ -86,4 +86,4 @@ class commotions_markkula_NI_BEETFS_ADE(model_template, commotions_template):
     
     
     def get_name(self):
-        return 'commotions_expanded_non_inter_FS_BO_EI_two_stage_ADE'
+        return 'commotions_non_inter_FS_BO_EI_two_stage_ADE'

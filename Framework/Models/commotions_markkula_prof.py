@@ -70,4 +70,4 @@ class commotions_markkula_prof(model_template, commotions_template):
     
     
     def get_name(self):
-        return 'commotions_expanded_inter_prof'
+        return 'commotions_inter_prof'

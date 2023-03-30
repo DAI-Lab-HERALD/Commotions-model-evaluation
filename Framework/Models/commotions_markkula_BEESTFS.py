@@ -86,4 +86,4 @@ class commotions_markkula_BEESTFS(model_template, commotions_template):
     
     
     def get_name(self):
-        return 'commotions_expanded_inter_S_FS_BO_EI_two_stage'
+        return 'commotions_inter_S_FS_BO_EI_two_stage'

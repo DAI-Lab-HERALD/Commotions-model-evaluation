@@ -86,4 +86,4 @@ class commotions_markkula_NI_BEEST(model_template, commotions_template):
     
     
     def get_name(self):
-        return 'commotions_expanded_non_inter_S_BO_EI_two_stage'
+        return 'commotions_non_inter_S_BO_EI_two_stage'

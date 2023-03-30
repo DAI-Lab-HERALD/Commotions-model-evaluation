@@ -86,4 +86,4 @@ class commotions_markkula_BEETFS(model_template, commotions_template):
     
     
     def get_name(self):
-        return 'commotions_expanded_inter_FS_BO_EI_two_stage'
+        return 'commotions_inter_FS_BO_EI_two_stage'
