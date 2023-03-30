@@ -2677,13 +2677,20 @@ class commotions_template():
         
         # Confirm that method indeed was completed (Error in model fitting are possible)
         completed = False
+        seed = 0
         while not completed:
             try:
+                # Set initial seed for the generation of the inital BO samples
+                torch.manual_seed(seed)
                 # Choose expected improvement as acquisition function
                 results = self.BO(method_all, iterations, 1, Models.GPEI)
                 completed = True
             except:
+                print('')
+                print(method_all + ': Failed due to numerical issues!')
+                print('')
                 completed = False
+                seed += 1
         return results
     
     
@@ -2712,13 +2719,20 @@ class commotions_template():
         
         # Confirm that method indeed was completed (Error in model fitting are possible)
         completed = False
+        seed = 0
         while not completed:
             try:
+                # Set initial seed for the generation of the inital BO samples
+                torch.manual_seed(seed)
                 # Choose knowledge gradient as acquisition function
                 results = self.BO(method_all, iterations, parallel_samples, Models.GPKG)
                 completed = True
             except:
+                print('')
+                print(method_all + ': Failed due to numerical issues!')
+                print('')
                 completed = False
+                seed += 1
         return results
     
     
