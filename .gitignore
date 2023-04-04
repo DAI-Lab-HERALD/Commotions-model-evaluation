@@ -50,6 +50,7 @@ analyse_data_2.py
 analyse_data_3.py
 Load_results.py
 rename_files.py
+remove_files.py
 
 # Ignore old commotions model files
 sc_scenario.py

@@ -86,4 +86,4 @@ class commotions_markkula_BEEST_ADE(model_template, commotions_template):
     
     
     def get_name(self):
-        return 'commotions_inter_S_BO_EI_two_stage_ADE'
+        return 'commotions_IS_IM_AC_2O_L2_(BO_EI)'

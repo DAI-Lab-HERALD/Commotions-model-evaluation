@@ -62,7 +62,7 @@ class logit_theofilatos_general(logit_theofilatos):
         return 'general'
     
     def get_name(self):
-        return 'logit_general'
+        return 'logit_1D'
         
 
         

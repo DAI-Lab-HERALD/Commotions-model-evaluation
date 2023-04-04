@@ -74,7 +74,7 @@ class logit_theofilatos(model_template):
         return 'path'
     
     def get_name(self):
-        return 'logit'
+        return 'logit_2D'
         
 
         

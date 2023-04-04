@@ -75,4 +75,4 @@ class commotions_markkula_NI_BEESFS_ADE(model_template, commotions_template):
     
     
     def get_name(self):
-        return 'commotions_non_inter_S_FS_BO_EI_ADE'
+        return 'commotions_AS_NM_AC_1O_L2_(BO_EI)'

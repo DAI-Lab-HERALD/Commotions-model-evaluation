@@ -38,7 +38,7 @@ class Random_split(splitting_template):
         self.Test_index= np.sort(np.concatenate((Index_accepted_test, Index_rejected_test), axis = 0))
     
     def get_name(self):
-        return 'random_split'
+        return 'random_split_0'
         
         
         

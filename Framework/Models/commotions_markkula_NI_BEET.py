@@ -86,4 +86,4 @@ class commotions_markkula_NI_BEET(model_template, commotions_template):
     
     
     def get_name(self):
-        return 'commotions_non_inter_BO_EI_two_stage'
+        return 'commotions_IS_NM_JC_2O_L1_(BO_EI)'
