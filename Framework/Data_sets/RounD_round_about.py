@@ -629,8 +629,6 @@ class RounD_round_about(data_set_template):
         D1 = D_ego - D_v_1 - vehicle_length
         D2 = D_v_2 - D_ego - vehicle_length
         
-        assert False 
-        
         Le = np.ones_like(Dc) * lane_width
         
         tar_a_change = np.where((tar_a[1:] < np.pi * 0.5) & (tar_a[:-1] > np.pi * 0.5))[0] + 1

@@ -174,7 +174,7 @@ class trajectron_salzmann(model_template):
         
         
 
-    def train_method(self, epochs = 10):   
+    def train_method(self, epochs = 200):   
         batch_size = self.trajectron.hyperparams['batch_size']     
         # prepare input data
         attention_radius = dict()
