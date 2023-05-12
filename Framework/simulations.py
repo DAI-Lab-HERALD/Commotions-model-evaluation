@@ -30,6 +30,7 @@ model_path = os.path.join(path, 'Models', '')
 if not model_path in sys.path:
     sys.path.insert(0, model_path)
     
+    #%%
 ##### Select modules
 n_I_max = 8
 

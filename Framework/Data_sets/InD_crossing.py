@@ -15,13 +15,13 @@ def rotate_track(track, angle, center):
 def determine_streets(track, streets):
     loc = streets.to_numpy()[:,1:].reshape(len(streets), 2, 2).astype(float)
     
-    x_in, y_in = track.iloc[0][['x', 'y']]
-    diff_in = loc - np.array([[[x_in, y_in]]])
+    pos_in = track.iloc[0][['x', 'y']].to_numpy()
+    diff_in = loc - pos_in[np.newaxis, np.newaxis]
     dist_in = np.sqrt(np.sum(diff_in ** 2, -1))
     street_in = np.argmin(np.min(dist_in, -1))
     
-    x_out, y_out = track.iloc[-1][['x', 'y']]
-    diff_out = loc - np.array([[[x_out, y_out]]])
+    pos_out = track.iloc[-1][['x', 'y']].to_numpy()
+    diff_out = loc - pos_out[np.newaxis, np.newaxis]
     dist_out = np.sqrt(np.sum(diff_out ** 2, -1))
     street_out = np.argmin(np.min(dist_out, -1))
     
@@ -151,14 +151,24 @@ class InD_crossing(data_set_template):
         Loc_data_pix.streets.iloc[3] = streets_4
         
         # Attention: No deep copy of the pandas dataframe in streets, so be careful
-        Loc_data = Loc_data_pix.copy(deep=True)
+        Loc_data = pd.DataFrame(np.empty(Loc_data_pix.shape, object), 
+                                columns = Loc_data_pix.columns, 
+                                index = Loc_data_pix.index)
+        
         # You cannot rely on the values given for orthoPxToMeter
         Loc_scale = {1: 10.22, 2: 10.22, 3: 10.22, 4: 6.57}
+        
         for [locId, recId] in unique_map:
             PxPerMeter = Loc_scale[locId]
-            Loc_data.center_x.loc[locId] = Loc_data.center_x.loc[locId] / PxPerMeter
-            Loc_data.center_y.loc[locId] = Loc_data.center_y.loc[locId] / PxPerMeter
-            Loc_data.streets.loc[locId].iloc[:,1:] = Loc_data.streets.loc[locId].iloc[:,1:] / PxPerMeter
+            streets_pix = Loc_data_pix.streets.loc[locId]
+            streets = pd.DataFrame(np.zeros(streets_pix.shape, object), 
+                                   columns = streets_pix.columns, 
+                                   index = streets_pix.index)
+            streets.iloc[:,1:] = streets_pix.iloc[:,1:] / PxPerMeter
+            streets.iloc[:,0]  = streets_pix.iloc[:,0] 
+            Loc_data.loc[locId].streets = streets
+            Loc_data.center_x.loc[locId] = Loc_data_pix.center_x.loc[locId] / PxPerMeter
+            Loc_data.center_y.loc[locId] = Loc_data_pix.center_y.loc[locId] / PxPerMeter
             
         # extract raw samples
         self.num_samples = 0
